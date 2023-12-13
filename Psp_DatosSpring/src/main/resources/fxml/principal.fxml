@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="root" prefHeight="400.0" prefWidth="600.0" stylesheets="@/css/style.css"
+            xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="ui.screens.principal.PrincipalController">
+    <center>
+        <StackPane prefHeight="150.0" prefWidth="200.0">
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="background" BorderPane.alignment="CENTER">
+                <children>
+                    <!--<MFXTextField fx:id="txtField" layoutX="274.0" layoutY="71.0" />
+                    <MFXButton fx:id="button" layoutX="289.0" layoutY="157.0" mnemonicParsing="false" onAction="#cambiarcss" text="Button">
+                        <font>
+                            <Font name="Alef Regular" size="12.0" />
+                        </font>
+                    </MFXButton>-->
+                    <TextField fx:id="txtNormal" layoutX="242.0" layoutY="120.0"/>
+                    <StackPane prefHeight="150.0" prefWidth="200.0"/>
+                </children>
+            </AnchorPane>
+        </StackPane>
+    </center>
+    <top>
+        <MenuBar fx:id="menuPrincipal">
+            <menus>
+                <Menu fx:id="menuOptions" mnemonicParsing="false" text="Options">
+                    <items>
+                        <MenuItem fx:id="menuItemLogout" mnemonicParsing="false" onAction="#menuClick" text="Logout"/>
+                        <MenuItem fx:id="menuItemExit" mnemonicParsing="false" onAction="#exit" text="Exit"/>
+                    </items>
+                </Menu>
+                <Menu fx:id="menuCustomers" mnemonicParsing="false" text="Customers">
+                    <items>
+                        <MenuItem fx:id="showCustomers" mnemonicParsing="false" onAction="#menuCustomers"
+                                  text="List Customers"/>
+                        <MenuItem fx:id="addCustomers" mnemonicParsing="false" onAction="#menuCustomers"
+                                  text="Add Customers"/>
+                        <MenuItem fx:id="deleteCustomers" mnemonicParsing="false" onAction="#menuCustomers"
+                                  text="Delete Customers"/>
+                        <MenuItem fx:id="updateCustomers" mnemonicParsing="false" onAction="#menuCustomers"
+                                  text="Update Customers"/>
+                    </items>
+                </Menu>
+                <Menu fx:id="menuOrders" mnemonicParsing="false" text="Orders">
+                    <items>
+                        <MenuItem fx:id="showOrders" mnemonicParsing="false" onAction="#menuOrders" text="List Orders"/>
+                        <MenuItem fx:id="addOrders" mnemonicParsing="false" onAction="#menuOrders" text="Add Orders"/>
+                        <MenuItem fx:id="deleteOrders" mnemonicParsing="false" onAction="#menuOrders"
+                                  text="Delete Orders"/>
+                        <MenuItem fx:id="updateOrders" mnemonicParsing="false" onAction="#menuOrders"
+                                  text="Update Orders"/>
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+</BorderPane>

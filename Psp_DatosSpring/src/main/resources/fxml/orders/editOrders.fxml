@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.screens.orders.editorder.EditOrderController">
+
+    <TextField fx:id="tableFIeld" layoutX="27.0" layoutY="99.0" promptText="Table Id" />
+    <Button layoutX="27.0" layoutY="142.0" mnemonicParsing="false" onAction="#editOrder" text="Update Order" />
+    <TableView fx:id="orderTable" layoutX="216.0" layoutY="38.0" prefHeight="343.0" prefWidth="345.0">
+        <columns>
+            <TableColumn fx:id="idOrder" prefWidth="33.0" text="Id" />
+            <TableColumn fx:id="orderDate" prefWidth="135.0" text="Order's date" />
+            <TableColumn fx:id="customerId" prefWidth="73.0" text="Customer Id" />
+            <TableColumn fx:id="tableId" prefWidth="103.0" text="Table Id" />
+        </columns>
+    </TableView>
+    <TableView fx:id="ordersXMLTable" layoutX="671.0" layoutY="90.0" prefHeight="320.0" prefWidth="177.0">
+        <columns>
+            <TableColumn fx:id="menuItem" prefWidth="100.0" text="Menu item" />
+            <TableColumn fx:id="quantity" prefWidth="75.0" text="Quantity" />
+        </columns>
+    </TableView>
+    <Button layoutX="682.0" layoutY="51.0" mnemonicParsing="false" onAction="#addOrder" text="Add" />
+    <Button layoutX="767.0" layoutY="51.0" mnemonicParsing="false" onAction="#deleteOrder" text="Delete" />
+    <ComboBox fx:id="menuItems" layoutX="682.0" layoutY="14.0" prefHeight="25.0" prefWidth="102.0" promptText="Menu Item">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="Spaghetti Carbonara" />
+                <String fx:value="Grilled Salmon" />
+                <String fx:value="Margherita Pizza" />
+                <String fx:value="Caesar Salad" />
+                <String fx:value="New York Cheesecake" />
+
+            </FXCollections>
+        </items>
+    </ComboBox>
+    <TextField fx:id="quantityItems" layoutX="792.0" layoutY="14.0" prefHeight="25.0" prefWidth="95.0" promptText="Quantity" />
+
+
+</AnchorPane>

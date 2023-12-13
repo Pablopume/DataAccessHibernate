@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.screens.orders.deleteorders.DeleteOrderController">
+    <TableView fx:id="ordersTable" layoutX="52.0" layoutY="44.0" prefHeight="343.0" prefWidth="326.0">
+        <columns>
+            <TableColumn fx:id="idOrder" prefWidth="43.0" text="Id" />
+            <TableColumn fx:id="orderDate" prefWidth="102.0" text="Order's date" />
+            <TableColumn fx:id="customerId" prefWidth="98.0" text="Customer Id" />
+            <TableColumn fx:id="tableId" prefWidth="82.0" text="Table Id" />
+        </columns>
+    </TableView>
+    <TableView fx:id="ordersXMLTable" layoutX="525.0" layoutY="76.0" prefHeight="320.0" prefWidth="177.0">
+        <columns>
+            <TableColumn fx:id="menuItem" prefWidth="100.0" text="Menu item" />
+            <TableColumn fx:id="quantity" prefWidth="75.0" text="Quantity" />
+        </columns>
+    </TableView>
+
+
+    <Button fx:id="buttonDelete" layoutX="43.0" layoutY="396.0" mnemonicParsing="false" onAction="#deleteOrder" text="Delete Order" />
+</AnchorPane>

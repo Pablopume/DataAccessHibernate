@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.screens.customers.deletecustomer.DeleteCustomersController">
+    <TableView fx:id="customersTable" layoutX="43.0" layoutY="36.0" prefHeight="331.0" prefWidth="594.0">
+        <columns>
+            <TableColumn fx:id="idCustomerColumn" prefWidth="33.0" text="Id" />
+            <TableColumn fx:id="nameCustomerColumn" prefWidth="95.0" text="First name" />
+            <TableColumn fx:id="surnameCustomerColumn" prefWidth="185.0" text="Last Name" />
+            <TableColumn fx:id="emailColumn" prefWidth="84.0" text="Email" />
+            <TableColumn fx:id="phoneColumn" prefWidth="71.0" text="Phone" />
+            <TableColumn fx:id="dateOfBirthdayColumn" prefWidth="125.0" text="Date of Birthday" />
+        </columns>
+    </TableView>
+    <TableView fx:id="orderssTable" layoutX="669.0" layoutY="36.0" prefHeight="343.0" prefWidth="326.0">
+        <columns>
+            <TableColumn fx:id="idOrder" prefWidth="43.0" text="Id" />
+            <TableColumn fx:id="orderDate" prefWidth="102.0" text="Order's date" />
+            <TableColumn fx:id="customerId" prefWidth="98.0" text="Customer Id" />
+            <TableColumn fx:id="tableId" prefWidth="82.0" text="Table Id" />
+        </columns>
+    </TableView>
+    <Button fx:id="buttonCostumer" layoutX="43.0" layoutY="396.0" mnemonicParsing="false" onAction="#deleteCustomer" text="Delete Customer" />
+
+</AnchorPane>

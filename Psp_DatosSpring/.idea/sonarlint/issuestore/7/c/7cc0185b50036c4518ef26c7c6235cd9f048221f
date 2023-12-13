@@ -1,0 +1,27 @@
+
+s
+java:S1104!"VMake tableFIeld a static final constant or non-public and provide accessors if needed.(Ñ‘¹Ù8®£¨ ½1
+w
+java:S1104""ZMake ordersXMLTable a static final constant or non-public and provide accessors if needed.(àş´8®£¨ ½1
+v
+java:S1104#"TMake menuItem a static final constant or non-public and provide accessors if needed.(äë¼Úøÿÿÿÿ8®£¨ ½1
+p
+java:S1104$"TMake quantity a static final constant or non-public and provide accessors if needed.(ë˜³38®£¨ ½1
+v
+java:S1104%"YMake quantityItems a static final constant or non-public and provide accessors if needed.(÷öäí8®£¨ ½1
+r
+java:S1104&"UMake menuItems a static final constant or non-public and provide accessors if needed.(ƒ´ãÄ8®£¨ ½1
+|
+java:S1450'"ZRemove the "credentials" field and declare it as a local variable in the relevant methods.(şàìùşÿÿÿÿ8¨Á¨½1
+O
+java:S1172"2Remove this unused method parameter "actionEvent".(‹‡Æ„8Ñ£¨ ½1
+X
+java:S1128";Remove this unused import 'jakarta.xml.bind.JAXBException'.(¬å†À8äÎ¿¨½1
+J
+java:S1128"(Remove this unused import 'lombok.Data'.(÷í«ÿÿÿÿÿ8äÎ¿¨½1
+H
+java:S1128"+Remove this unused import 'model.MenuItem'.(¼Ò¿à8äÎ¿¨½1
+R
+java:S1128"0Remove this unused import 'java.io.IOException'.(ªº»Úıÿÿÿÿ8åÎ¿¨½1
+Q
+java:S1068'"/Remove this unused "credentials" private field.(şàìùşÿÿÿÿ8ÒÊ ¨½1

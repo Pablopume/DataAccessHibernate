@@ -1,0 +1,37 @@
+
+Q
+java:S3740&"/Provide the parametrized type for this generic.(Ξ›ϋÿÿÿÿ8Ϊυγ¤½1
+Q
+java:S3740'"/Provide the parametrized type for this generic.(Γσª•ϊÿÿÿÿ8Ϋυγ¤½1
+Q
+java:S3740("/Provide the parametrized type for this generic.(π… ϋÿÿÿÿ8Ϋυγ¤½1
+Q
+java:S3740)"/Provide the parametrized type for this generic.(¶€ξ›ϊÿÿÿÿ8Ϋυγ¤½1
+|
+java:S1104&"ZMake ordersCustomer a static final constant or non-public and provide accessors if needed.(Ξ›ϋÿÿÿÿ8Ϋυγ¤½1
+u
+java:S1104'"SMake product a static final constant or non-public and provide accessors if needed.(Γσª•ϊÿÿÿÿ8Ϋυγ¤½1
+w
+java:S1104("UMake idProduct a static final constant or non-public and provide accessors if needed.(π… ϋÿÿÿÿ8Ϋυγ¤½1
+s
+java:S1104)"QMake price a static final constant or non-public and provide accessors if needed.(¶€ξ›ϊÿÿÿÿ8Ϋυγ¤½1
+u
+java:S1104*"XMake orderssTable a static final constant or non-public and provide accessors if needed.(Òτ†ψ8Ϋυγ¤½1
+p
+java:S1104+"SMake idOrder a static final constant or non-public and provide accessors if needed.(Άχ½Ώ8Ϋυγ¤½1
+r
+java:S1104,"UMake orderDate a static final constant or non-public and provide accessors if needed.(μ«ΒΥ8Ϋυγ¤½1
+s
+java:S1104-"VMake customerId a static final constant or non-public and provide accessors if needed.(Κ»κ8Ϋυγ¤½1
+u
+java:S1104."SMake tableId a static final constant or non-public and provide accessors if needed.(–Φ³ªώÿÿÿÿ8Ϋυγ¤½1
+t
+java:S3776\"RRefactor this method to reduce its Cognitive Complexity from 31 to the 15 allowed.(’£»ώÿÿÿÿ8χυγ¤½1
+T
+java:S1172\"2Remove this unused method parameter "actionEvent".(’£»ώÿÿÿÿ8χυγ¤½1
+`
+java:S1128">Remove this unused import 'javafx.collections.ObservableList'.(Δά€ιόÿÿÿÿ8ϊυγ¤½1
+Y
+java:S1128"7Remove this unused import 'model.errors.CustomerError'.(υΖώÿÿÿÿ8ϊυγ¤½1
+V
+java:S1128"4Remove this unused import 'java.time.LocalDateTime'.(ζΓ§ƒόÿÿÿÿ8ϊυγ¤½1

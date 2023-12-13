@@ -1,0 +1,9 @@
+
+t
+java:S1104"WMake txtPassword a static final constant or non-public and provide accessors if needed.(Éı„–8–ÍÀ€½1
+t
+java:S1104"WMake txtUserName a static final constant or non-public and provide accessors if needed.(Äù±Ú8—ÍÀ€½1
+v
+java:S1104"YMake pantallaLogin a static final constant or non-public and provide accessors if needed.(ÛıËƒ8—ÍÀ€½1
+O
+java:S1172"2Remove this unused method parameter "actionEvent".(À…ƒ½8§ÍÀ€½1

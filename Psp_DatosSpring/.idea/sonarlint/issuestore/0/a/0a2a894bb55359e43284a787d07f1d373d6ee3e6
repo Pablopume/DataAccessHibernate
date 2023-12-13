@@ -1,0 +1,16 @@
+
+w
+java:S1104"UMake addOrders a static final constant or non-public and provide accessors if needed.(ë”ç£şÿÿÿÿ8³Àş¼1
+v
+java:S1104"YMake menuCustomers a static final constant or non-public and provide accessors if needed.(»Ùşÿ8³Àş¼1
+z
+java:S1104"XMake deleteOrders a static final constant or non-public and provide accessors if needed.(ÿ¦õ­şÿÿÿÿ8³Àş¼1
+‚
+java:S1845Ã"_Rename method "menuCustomers" to prevent any misunderstanding/clash with field "menuCustomers".(øÆºéşÿÿÿÿ8ÊÀş¼1
+[
+java:S1117m"9Rename "alert" which hides the field declared at line 46.(Ö×Íõÿÿÿÿÿ8ÓÀş¼1
+Y	java:S125˜"<This block of commented-out lines of code should be removed.(‰ÍÎÕ8ÕÀş¼1
+?	java:S131Ÿ""Add a default case to this switch.(Ø•ƒ»8ÖÀş¼1
+Y	java:S125¾"<This block of commented-out lines of code should be removed.(ØİÌ8×Àş¼1
+?	java:S131Ä""Add a default case to this switch.(Ø•ƒ»8×Àş¼1
+?	java:S131Í""Add a default case to this switch.(Ø•ƒ»8ØÀş¼1

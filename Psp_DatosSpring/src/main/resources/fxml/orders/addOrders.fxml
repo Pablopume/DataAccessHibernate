@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.screens.orders.addorder.AddOrderController">
+
+
+    <TableView fx:id="ordersXMLTable" layoutX="525.0" layoutY="76.0" prefHeight="320.0" prefWidth="177.0">
+        <columns>
+            <TableColumn fx:id="menuItem" prefWidth="100.0" text="Menu item" />
+            <TableColumn fx:id="quantity" prefWidth="76.0" text="Quantity" />
+        </columns>
+    </TableView>
+    <ComboBox fx:id="table_id" layoutX="130.0" layoutY="24.0" prefHeight="25.0" prefWidth="174.0" promptText="Table Number">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="1" />
+                <String fx:value="2" />
+                <String fx:value="3" />
+                <String fx:value="4" />
+                <String fx:value="5" />
+            </FXCollections>
+        </items>
+    </ComboBox>
+    <ComboBox fx:id="menuItems" layoutX="526.0" layoutY="11.0" prefHeight="25.0" prefWidth="102.0" promptText="Menu Item">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="Spaghetti Carbonara" />
+                <String fx:value="Grilled Salmon" />
+                <String fx:value="Margherita Pizza" />
+                <String fx:value="Caesar Salad" />
+                <String fx:value="New York Cheesecake" />
+
+            </FXCollections>
+        </items>
+    </ComboBox>
+    <TextField fx:id="quantityItems" layoutX="635.0" layoutY="11.0" prefHeight="25.0" prefWidth="95.0" promptText="Quantity" />
+    <Button layoutX="526.0" layoutY="48.0" mnemonicParsing="false" onAction="#removeOrder" text="Remove" />
+    <Button layoutX="628.0" layoutY="48.0" mnemonicParsing="false" onAction="#addItem" text="Add" />
+    <Button layoutX="322.0" layoutY="384.0" mnemonicParsing="false" onAction="#addOrder" text="Add Order" />
+</AnchorPane>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.screens.orders.listorders.ListOrderController">
+    <DatePicker fx:id="datePicker" layoutX="204.0" layoutY="399.0" promptText="Date" />
+    <Label fx:id="nameCustomer" layoutX="420.0" layoutY="8.0" prefHeight="25.0" prefWidth="137.0" text="Customer Name">
+    <font>
+        <Font size="16.0" /> <!-- Aquí puedes ajustar el tamaño de fuente a tu preferencia -->
+    </font>
+    </Label>
+    <TextField fx:id="customerTextField" layoutX="204.0" layoutY="399.0" prefHeight="25.0" prefWidth="174.0" promptText="Customer" />
+
+    <TableView fx:id="customersTable" layoutX="20.0" layoutY="45.0" prefHeight="343.0" prefWidth="326.0">
+        <columns>
+            <TableColumn fx:id="idOrder" prefWidth="43.0" text="Id" />
+            <TableColumn fx:id="orderDate" prefWidth="102.0" text="Order's date" />
+            <TableColumn fx:id="customerId" prefWidth="98.0" text="Customer Id" />
+            <TableColumn fx:id="tableId" prefWidth="82.0" text="Table Id" />
+        </columns>
+    </TableView>
+
+    <TableView fx:id="ordersTable" layoutX="395.0" layoutY="68.0" prefHeight="275.0" prefWidth="293.0">
+        <columns>
+            <TableColumn fx:id="menuItem" prefWidth="100.0" text="Menu item" />
+            <TableColumn fx:id="quantity" prefWidth="90.0" text="Quantity" />
+            <TableColumn fx:id="priceT" prefWidth="100.0" text="Price" />
+        </columns>
+    </TableView>
+   <ComboBox fx:id="comboBox" layoutX="20.0" layoutY="399.0" prefWidth="150.0" promptText="Filter">
+    <items>
+        <FXCollections fx:factory="observableArrayList">
+            <String fx:value="Customer ID" />
+            <String fx:value="Date" />
+        </FXCollections>
+    </items>
+   </ComboBox>
+   <Label fx:id="price" layoutX="431.0" layoutY="387.0" prefHeight="25.0" prefWidth="137.0" text="Price">
+      <font>
+         <Font size="16.0" />
+      </font>
+   </Label>
+</AnchorPane>
