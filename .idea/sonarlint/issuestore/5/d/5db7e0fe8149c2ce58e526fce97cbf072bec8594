@@ -1,0 +1,11 @@
+
+k
+java:S1104"UMake mailField a static final constant or non-public and provide accessors if needed.(ŸúçÕ
+o
+java:S1104"TMake dobField a static final constant or non-public and provide accessors if needed.(¨²œúÿÿÿÿ
+o
+java:S1104"TMake password a static final constant or non-public and provide accessors if needed.(Êº©ÿÿÿÿÿÿ
+o
+java:S1104"TMake userName a static final constant or non-public and provide accessors if needed.(–‘Á¯úÿÿÿÿ
+]
+java:S6813-"BRemove this field injection and use constructor injection instead.(Áº–üÿÿÿÿ

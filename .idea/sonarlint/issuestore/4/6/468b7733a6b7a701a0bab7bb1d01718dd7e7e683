@@ -1,0 +1,19 @@
+
+l
+java:S1104#"VMake tableFIeld a static final constant or non-public and provide accessors if needed.(Ñ‘¹Ù
+p
+java:S1104$"ZMake ordersXMLTable a static final constant or non-public and provide accessors if needed.(àş´
+o
+java:S1104%"TMake menuItem a static final constant or non-public and provide accessors if needed.(äë¼Úøÿÿÿÿ
+i
+java:S1104&"TMake quantity a static final constant or non-public and provide accessors if needed.(ë˜³3
+o
+java:S1104'"YMake quantityItems a static final constant or non-public and provide accessors if needed.(÷öäí
+k
+java:S1104("UMake menuItems a static final constant or non-public and provide accessors if needed.(ƒ´ãÄ
+]
+java:S6813*"BRemove this field injection and use constructor injection instead.(Áº–üÿÿÿÿ
+u
+java:S1450)"ZRemove the "credentials" field and declare it as a local variable in the relevant methods.(şàìùşÿÿÿÿ
+J
+java:S1068)"/Remove this unused "credentials" private field.(şàìùşÿÿÿÿ
