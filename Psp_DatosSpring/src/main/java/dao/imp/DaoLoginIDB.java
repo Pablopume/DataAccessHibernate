@@ -1,51 +1,53 @@
 package dao.imp;
 
-import common.Constants;
-import common.SqlQueries;
+import dao.JPAUtil;
 import dao.LoginDAO;
 import io.vavr.control.Either;
 import jakarta.inject.Inject;
+import jakarta.persistence.EntityManager;
 import model.Credentials;
+import model.model2.CredentialsEntity;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class DaoLoginIDB implements LoginDAO {
     public static final String USER_NAME = "user_name";
     public static final String PASSWORD = "password";
     private DBConnectionPool db;
-
+private final JPAUtil jpautil;
     @Inject
-    public DaoLoginIDB(DBConnectionPool db) {
+    public DaoLoginIDB(DBConnectionPool db, JPAUtil jpautil) {
         this.db = db;
+        this.jpautil = jpautil;
     }
 
 
+    @Override
     public Either<String, List<Credentials>> getAll() {
         Either<String, List<Credentials>> response;
-        try (
-                Connection myConnection = db.getConnection(); Statement statement = myConnection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
-                ResultSet.CONCUR_READ_ONLY)) {
-            ResultSet rs = statement.executeQuery(SqlQueries.SELECT_FROM_CREDENTIALS);
-            List<Credentials> credentialsList = new ArrayList<>();
-            while (rs.next()) {
-                int id = rs.getInt(Constants.ID);
-                String user = rs.getString(USER_NAME);
-                String password = rs.getString(PASSWORD);
-                Credentials c = new Credentials(id, user, password);
-                credentialsList.add(c);
+        EntityManager em = null;
+
+        try {
+            em = jpautil.getEntityManager();
+            List<CredentialsEntity> credentialsEntities = em.createQuery("from CredentialsEntity", CredentialsEntity.class).getResultList();
+
+            List<Credentials> credentialsList = credentialsEntities.stream()
+                    .map(CredentialsEntity::toCredentials)
+                    .collect(Collectors.toList());
+
+            if (credentialsList.isEmpty()) {
+                response = Either.left("Error while retrieving credentials");
+            } else {
+                response = Either.right(credentialsList);
             }
-            response = Either.right(credentialsList);
-            db.closeConnection(myConnection);
-        } catch (SQLException e) {
-            response = Either.left(e.getMessage());
+        } finally {
+            if (em != null) em.close();
         }
+
         return response;
     }
+
 
 
 }

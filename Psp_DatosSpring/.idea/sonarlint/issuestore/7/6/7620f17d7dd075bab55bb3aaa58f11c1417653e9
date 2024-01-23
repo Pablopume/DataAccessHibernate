@@ -1,13 +1,9 @@
 
 W
-java:S1141A"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8äö«ŸÓ1
+java:S1141O"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8Ô¦²°Ó1
 s
-java:S1450"QRemove the "em" field and declare it as a local variable in the relevant methods.(‘æ¿Úúÿÿÿÿ8÷ö«ŸÓ1
-M
-java:S2695Z"+This "PreparedStatement" has no parameters.(Ùæıªøÿÿÿÿ8ıö«ŸÓ1
-H
-java:S2695["+This "PreparedStatement" has no parameters.(ïÌĞÚ8ıö«ŸÓ1
-M
-java:S2695\"+This "PreparedStatement" has no parameters.(ĞŠŞ›üÿÿÿÿ8ıö«ŸÓ1
-H
-java:S2695]"+This "PreparedStatement" has no parameters.(ùó°´8ıö«ŸÓ1
+java:S1450!"QRemove the "em" field and declare it as a local variable in the relevant methods.(‘æ¿Úúÿÿÿÿ8é¦²°Ó1
+S
+java:S1117,"6Rename "em" which hides the field declared at line 33.(æ‡û8ÒÏ¸±Ó1
+C
+java:S1068"&Remove this unused "db" private field.(½ô¦ß8âÏ¸±Ó1

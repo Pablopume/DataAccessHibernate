@@ -100,18 +100,7 @@ public class OrderItemDaoJDBC implements OrderItemDAO {
         return result;
     }
 
-    private List<OrderItem> readRS(ResultSet rs) throws SQLException {
-        List<OrderItem> result = new ArrayList<>();
-        while (rs.next()) {
-            OrderItem orderItem = new OrderItem();
-            orderItem.setId(rs.getInt(Constants.ORDER_ITEM_ID));
-            orderItem.setIdOrder(rs.getInt(Constants.ORDER_ID));
-            orderItem.setMenuItem(getMenuItem(rs.getInt(Constants.MENU_ITEM_ID2)));
-            orderItem.setQuantity(rs.getInt(Constants.QUANTITY));
-            result.add(orderItem);
-        }
-        return result;
-    }
+
 
 
     private MenuItem getMenuItem(int id) {

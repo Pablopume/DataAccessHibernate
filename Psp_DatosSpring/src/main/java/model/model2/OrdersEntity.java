@@ -1,6 +1,7 @@
 package model.model2;
 
 import jakarta.persistence.*;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 import model.Order;
 import model.OrderItem;
@@ -11,14 +12,16 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
 @NoArgsConstructor
+@Data
 @Entity
 @Table(name = "orders", schema = "pabloserrano_restaurant")
 public class OrdersEntity {
-    public OrdersEntity( Timestamp orderDate, int customerId, int tableId, RestaurantTablesEntity restaurantTablesByTableId) {
+    public OrdersEntity( Timestamp orderDate, int customerId, int tableId, RestaurantTablesEntity restaurantTablesByTableId, Collection<OrderItemsEntity> orderItemsByOrderId) {
         this.orderDate = orderDate;
         this.customerId = customerId;
         this.tableId = tableId;
         this.restaurantTablesByTableId = restaurantTablesByTableId;
+        this.orderItemsByOrderId = orderItemsByOrderId;
     }
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)

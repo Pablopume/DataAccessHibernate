@@ -105,8 +105,8 @@ public class EditOrderController extends BaseScreenController {
         SelectionModel<Order> selectionModel = orderTable.getSelectionModel();
         Order selectedOrder = selectionModel.getSelectedItem();
 
-        editOrderViewModel.getServices().update(new Order(selectedOrder.getId(), LocalDateTime.now(),selectedOrder.getCustomer_id(), Integer.parseInt(tableFIeld.getText())));
-        editOrderViewModel.getOrderItemService().update(ordersXMLTable.getItems());
+        editOrderViewModel.getServices().update(new Order(selectedOrder.getId(), LocalDateTime.now(),selectedOrder.getCustomer_id(), Integer.parseInt(tableFIeld.getText()),ordersXMLTable.getItems()));
+     //   editOrderViewModel.getOrderItemService().update(ordersXMLTable.getItems());
         orders.clear();
         orders.addAll(editOrderViewModel.getServices().getAll().get());
         Alert alert = new Alert(Alert.AlertType.INFORMATION);

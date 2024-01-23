@@ -11,8 +11,11 @@ v
 java:S1104%"YMake quantityItems a static final constant or non-public and provide accessors if needed.(÷öäí8®£¨ ½1
 r
 java:S1104&"UMake menuItems a static final constant or non-public and provide accessors if needed.(ƒ´ãÄ8®£¨ ½1
+d
+java:S6813("BRemove this field injection and use constructor injection instead.(Áº–Žüÿÿÿÿ8¨¢§­Ó1
 |
 java:S1450'"ZRemove the "credentials" field and declare it as a local variable in the relevant methods.(þàìùþÿÿÿÿ8¨ÁŽ¨½1
+X	java:S125m"<This block of commented-out lines of code should be removed.(¢»§8û¨¼­Ó1
 O
 java:S1172"2Remove this unused method parameter "actionEvent".(‹‡Æ„8Ñ£¨ ½1
 X

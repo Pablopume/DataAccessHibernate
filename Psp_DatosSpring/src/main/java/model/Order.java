@@ -69,7 +69,7 @@ public class Order {
         } else {
             numberSeats = 2;
         }
-        return new OrdersEntity(Timestamp.valueOf(date), customer_id, table_id, new RestaurantTablesEntity(table_id,numberSeats ));
+        return new OrdersEntity(Timestamp.valueOf(date), customer_id, table_id, new RestaurantTablesEntity(table_id,numberSeats ), new ArrayList<>());
     }
 
     public String toStringTextFile() {

@@ -31,13 +31,13 @@ import java.util.stream.Collectors;
 
 @Log4j2
 public class CustomerDB implements CustomerDAO {
-    private final DBConnectionPool db;
+
     private final JPAUtil jpautil;
     private EntityManager em;
 
     @Inject
-    public CustomerDB(DBConnectionPool db, JPAUtil jpautil) {
-        this.db = db;
+    public CustomerDB(JPAUtil jpautil) {
+
         this.jpautil = jpautil;
     }
 //Catch DuplicatedKeyException

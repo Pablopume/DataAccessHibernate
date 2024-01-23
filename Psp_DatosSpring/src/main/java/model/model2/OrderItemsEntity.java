@@ -10,11 +10,15 @@ import java.util.Objects;
 @Table(name = "order_items", schema = "pabloserrano_restaurant")
 public class OrderItemsEntity {
 
-    public OrderItemsEntity(int orderItemId, int menuItemId, int quantity) {
-        this.orderItemId = orderItemId;
+    public OrderItemsEntity( int menuItemId, int quantity) {
+
         this.menuItemId = menuItemId;
         this.quantity = quantity;
     }
+
+    @Basic
+    @Column(name = "order_id", nullable = false, insertable = false, updatable = false)
+    private int orderId;
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -35,7 +39,7 @@ public class OrderItemsEntity {
     private MenuItemsEntity menuItemsByMenuItemId;
 
     public OrderItem toOrderItem() {
-        return new OrderItem(orderItemId, menuItemsByMenuItemId.toMenuItem(), quantity);
+        return new OrderItem( menuItemsByMenuItemId.toMenuItem(), quantity);
     }
     public int getOrderItemId() {
         return orderItemId;

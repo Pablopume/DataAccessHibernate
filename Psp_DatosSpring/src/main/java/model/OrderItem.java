@@ -14,13 +14,12 @@ public class OrderItem {
     private MenuItem menuItem;
     private int quantity;
 
-    public OrderItem(int id,  MenuItem menuItem, int quantity) {
-        this.id = id;
+    public OrderItem(  MenuItem menuItem, int quantity) {
         this.menuItem = menuItem;
         this.quantity = quantity;
     }
 
     public OrderItemsEntity toOrderItemsEntity() {
-        return new OrderItemsEntity(id,  menuItem.getId(), quantity);
+        return new OrderItemsEntity(  menuItem.getId(), quantity);
     }
 }
