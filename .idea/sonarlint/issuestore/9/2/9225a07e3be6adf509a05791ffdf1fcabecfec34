@@ -1,0 +1,5 @@
+
+o
+java:S6204%"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹8Ï·˜²Ó1
+C
+java:S1068"&Remove this unused "db" private field.(½ô¦ß8Ð·˜²Ó1

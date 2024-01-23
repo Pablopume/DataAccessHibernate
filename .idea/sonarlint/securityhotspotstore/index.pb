@@ -135,3 +135,9 @@ r
 BPsp_DatosSpring/src/main/java/ui/screens/login/LoginViewModel.java,d\5\d5272f0513f778cbf49867c07907d6c5470400b8
 c
 3Psp_DatosSpring/src/main/java/common/Constants.java,d\d\dd165ee4fe533d82fcf5d94061032ae60605ed13
+p
+@Psp_DatosSpring/src/main/java/model/model2/OrderItemsEntity.java,4\9\49ce42245c222bd97f79e651d13f1990cdd2e6bd
+b
+2Psp_DatosSpring/src/main/java/model/OrderItem.java,a\1\a16bb0dbba2517ded377f2c7278f8cb5ad728516
+l
+<Psp_DatosSpring/src/main/java/model/model2/OrdersEntity.java,6\b\6b0d0eab585ea039e64dbb839a54e4d3d1899c16

@@ -1,19 +1,30 @@
 
 l
-java:S1104#"VMake tableFIeld a static final constant or non-public and provide accessors if needed.(Ñ‘¹Ù
+java:S1104!"VMake tableFIeld a static final constant or non-public and provide accessors if needed.(Ñ‘¹Ù
 p
-java:S1104$"ZMake ordersXMLTable a static final constant or non-public and provide accessors if needed.(Žàþ´
+java:S1104""ZMake ordersXMLTable a static final constant or non-public and provide accessors if needed.(Žàþ´
 o
-java:S1104%"TMake menuItem a static final constant or non-public and provide accessors if needed.(äë¼Úøÿÿÿÿ
+java:S1104#"TMake menuItem a static final constant or non-public and provide accessors if needed.(äë¼Úøÿÿÿÿ
 i
-java:S1104&"TMake quantity a static final constant or non-public and provide accessors if needed.(ë˜³3
+java:S1104$"TMake quantity a static final constant or non-public and provide accessors if needed.(ë˜³3
 o
-java:S1104'"YMake quantityItems a static final constant or non-public and provide accessors if needed.(÷öäí
+java:S1104%"YMake quantityItems a static final constant or non-public and provide accessors if needed.(÷öäí
 k
-java:S1104("UMake menuItems a static final constant or non-public and provide accessors if needed.(ƒ´ãÄ
+java:S1104&"UMake menuItems a static final constant or non-public and provide accessors if needed.(ƒ´ãÄ
 ]
-java:S6813*"BRemove this field injection and use constructor injection instead.(Áº–Žüÿÿÿÿ
+java:S6813("BRemove this field injection and use constructor injection instead.(Áº–Žüÿÿÿÿ
 u
-java:S1450)"ZRemove the "credentials" field and declare it as a local variable in the relevant methods.(þàìùþÿÿÿÿ
+java:S1450'"ZRemove the "credentials" field and declare it as a local variable in the relevant methods.(þàìùþÿÿÿÿ
+X	java:S125m"<This block of commented-out lines of code should be removed.(¢»§8è¸˜²Ó1
+O
+java:S1172"2Remove this unused method parameter "actionEvent".(‹‡Æ„8ë¸˜²Ó1
+X
+java:S1128";Remove this unused import 'jakarta.xml.bind.JAXBException'.(¬å†À8ì¸˜²Ó1
 J
-java:S1068)"/Remove this unused "credentials" private field.(þàìùþÿÿÿÿ
+java:S1128"(Remove this unused import 'lombok.Data'.(÷í«ÿÿÿÿÿ8ì¸˜²Ó1
+H
+java:S1128"+Remove this unused import 'model.MenuItem'.(¼Ò¿à8ì¸˜²Ó1
+R
+java:S1128"0Remove this unused import 'java.io.IOException'.(ªº»Úýÿÿÿÿ8ì¸˜²Ó1
+J
+java:S1068'"/Remove this unused "credentials" private field.(þàìùþÿÿÿÿ
