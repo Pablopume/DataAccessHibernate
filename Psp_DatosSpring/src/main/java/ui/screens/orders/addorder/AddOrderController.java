@@ -53,44 +53,43 @@ public class AddOrderController extends BaseScreenController {
     }
 
 
-
     public void addOrder() {
 
-            int selectedCustomerId = actualuser.getId();
-            int selectedTableId = Integer.parseInt(table_id.getValue());
-     Order order=  addOrderViewModel.getServices().createOrder(new Order(LocalDateTime.now(),selectedCustomerId,selectedTableId)).get();
-            List<Order> orders = addOrderViewModel.getServices().getAll().get();
-            if((orders.get(orders.size()-1).getDate().getSecond()==order.getDate().getSecond()||orders.get(orders.size()-1).getDate().getSecond()==order.getDate().getSecond()+1 ) && orders.get(orders.size()-1).getDate().getMinute()==order.getDate().getMinute() && orders.get(orders.size()-1).getDate().getHour()==order.getDate().getHour() && orders.get(orders.size()-1).getDate().getDayOfMonth()==order.getDate().getDayOfMonth() && orders.get(orders.size()-1).getDate().getMonth()==order.getDate().getMonth() && orders.get(orders.size()-1).getDate().getYear()==order.getDate().getYear()) {
-            for (OrderItem orderItem : ordersXMLTable.getItems()) {
-                orderItem.setIdOrder(orders.get(orders.size() - 1).getId());
-            }
-        }
-            addOrderViewModel.getOrderItemService().save(ordersXMLTable.getItems());
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle(Constants.ORDER_ADDED);
-            alert.setHeaderText(null);
-            alert.setContentText(Constants.THE_ORDER_HAS_BEEN_ADDED);
-            alert.showAndWait();
+        int selectedCustomerId = actualuser.getId();
+        int selectedTableId = Integer.parseInt(table_id.getValue());
+         addOrderViewModel.getServices().createOrder(new Order(LocalDateTime.now(), selectedCustomerId, selectedTableId,ordersXMLTable.getItems())).get();
+       // List<Order> orders = addOrderViewModel.getServices().getAll().get();
+       // if ((orders.get(orders.size() - 1).getDate().getSecond() == order.getDate().getSecond() || orders.get(orders.size() - 1).getDate().getSecond() == order.getDate().getSecond() + 1) && orders.get(orders.size() - 1).getDate().getMinute() == order.getDate().getMinute() && orders.get(orders.size() - 1).getDate().getHour() == order.getDate().getHour() && orders.get(orders.size() - 1).getDate().getDayOfMonth() == order.getDate().getDayOfMonth() && orders.get(orders.size() - 1).getDate().getMonth() == order.getDate().getMonth() && orders.get(orders.size() - 1).getDate().getYear() == order.getDate().getYear()) {
+         //   for (OrderItem orderItem : ordersXMLTable.getItems()) {
+           //     orderItem.setIdOrder(orders.get(orders.size() - 1).getId());
+           // }
+       // }
+        addOrderViewModel.getOrderItemService().save(ordersXMLTable.getItems());
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(Constants.ORDER_ADDED);
+        alert.setHeaderText(null);
+        alert.setContentText(Constants.THE_ORDER_HAS_BEEN_ADDED);
+        alert.showAndWait();
 
     }
 
     public void addItem() {
-         ObservableList<OrderItem> orderItem= ordersXMLTable.getItems();
-          orderItem.add(new OrderItem(addOrderViewModel.getOrderItemService().getAutoId(),addOrderViewModel.getServices().getLastId()+1,addOrderViewModel.getMenuItemService().getByName(menuItems.getValue()),Integer.parseInt(quantityItems.getText())));
-          ordersXMLTable.setItems(orderItem);
+        ObservableList<OrderItem> orderItem = ordersXMLTable.getItems();
+        orderItem.add(new OrderItem(addOrderViewModel.getOrderItemService().getAutoId(), addOrderViewModel.getServices().getLastId() + 1, addOrderViewModel.getMenuItemService().getByName(menuItems.getValue()), Integer.parseInt(quantityItems.getText())));
+        ordersXMLTable.setItems(orderItem);
     }
 
     public void removeOrder() {
 
-        ObservableList<OrderItem> orderItemXMLS= ordersXMLTable.getItems();
+        ObservableList<OrderItem> orderItemXMLS = ordersXMLTable.getItems();
         OrderItem selectedOrder = ordersXMLTable.getSelectionModel().getSelectedItem();
-          orderItemXMLS.remove(selectedOrder);
-          ordersXMLTable.setItems(orderItemXMLS);
+        orderItemXMLS.remove(selectedOrder);
+        ordersXMLTable.setItems(orderItemXMLS);
     }
 
     @Override
     public void principalLoaded() {
         addOrderViewModel.loadState();
-        actualuser=getPrincipalController().getActualUser();
+        actualuser = getPrincipalController().getActualUser();
     }
 }

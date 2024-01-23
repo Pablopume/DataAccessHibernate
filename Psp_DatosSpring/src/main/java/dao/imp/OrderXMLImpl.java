@@ -8,6 +8,7 @@ import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBException;
 import jakarta.xml.bind.Marshaller;
 import jakarta.xml.bind.Unmarshaller;
+import lombok.extern.log4j.Log4j2;
 import model.Order;
 import model.errors.OrderError;
 import model.xml.OrderItemXML;
@@ -20,7 +21,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
-
+@Log4j2
 @Named("OrderXMLImpl")
 public class OrderXMLImpl implements OrdersDAO {
     @Override
@@ -64,7 +65,7 @@ public class OrderXMLImpl implements OrdersDAO {
             jaxbMarshaller.marshal(ordersXML, fileWriter);
             fileWriter.close();
         } catch (JAXBException | java.io.IOException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
         return Either.right(order);
     }

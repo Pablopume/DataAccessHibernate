@@ -18,12 +18,6 @@ b
 ^
 .Psp_DatosSpring/src/main/java/model/Order.java,b\b\bb60510b261d0ed76bd7271d1b892ad827df7c75
 t
-DPsp_DatosSpring/src/main/java/model/hibernate/CredentialsEntity.java,c\f\cffb4ab599bcdf001da27801ce9fc6f982134ecd
-o
-?Psp_DatosSpring/src/main/java/model/hibernate/OrdersEntity.java,5\e\5e8eb671ab97e2396a5f9f48dca83f1223bafae5
-`
-0Psp_DatosSpring/src/main/java/modelDB/Order.java,f\3\f38b4fd0769ff18c4ba0d0e98c3422157cb9c67b
-t
 DPsp_DatosSpring/src/main/java/dao/deprecated/DeprecatedCustomer.java,9\d\9d3ceb3e6d7f8fc241d61b04f77ca450a2d09ef7
 q
 APsp_DatosSpring/src/main/java/dao/deprecated/DeprecatedOrder.java,3\e\3e322700eaad66cf18ddb459a4d21ec90f4537be
@@ -49,14 +43,6 @@ b
 0Psp_DatosSpring/src/main/java/dao/OrdersDAO.java,a\1\a195e0e1f2c21cbaae901d862fe59a32e356eb6a
 g
 7Psp_DatosSpring/src/main/java/dao/imp/OrderXMLImpl.java,3\2\3200bcbc88d0f9c285af9c7d09ea990e6a48c73c
-s
-CPsp_DatosSpring/src/main/java/model/hibernate/OrderItemsEntity.java,3\e\3e7e0b227d8a9971d4423dd592a88c8a7328889c
-r
-BPsp_DatosSpring/src/main/java/model/hibernate/MenuItemsEntity.java,7\c\7ce805d50eee98d6c3a65c47a1704487b67a2b76
-d
-4Psp_DatosSpring/src/main/java/modelDB/OrderItem.java,f\3\f3747db881496fbd07b918a14755c4d81175f295
-r
-BPsp_DatosSpring/src/main/java/model/hibernate/CustomersEntity.java,4\9\49ace2376fc42f24a8361518e8137833811d794c
 c
 3Psp_DatosSpring/src/main/java/ui/main/DIJavafx.java,f\a\fa4b171b2b5a5f309e8e4893530687c2c7e27826
 h

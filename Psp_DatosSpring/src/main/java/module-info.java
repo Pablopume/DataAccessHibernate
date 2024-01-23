@@ -27,6 +27,7 @@ module javafx {
     exports ui.screens.orders.deleteorders;
     exports services.impl;
     exports dao.imp;
+    exports model.model2;
     exports model;
     exports ui.main to javafx.graphics;
     exports ui.screens.principal;
@@ -40,6 +41,8 @@ module javafx {
     exports ui.screens.orders.addorder;
     exports configuration;
     exports common;
+    opens model.model2;
+    opens model;
     opens ui.screens.common;
     opens ui.screens.login;
     opens ui.screens.customers.editcustomers;

@@ -4,9 +4,12 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import model.model2.CustomersEntity;
 
+import java.sql.Date;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 
 @Data
 @AllArgsConstructor
@@ -14,6 +17,7 @@ import java.time.format.DateTimeFormatter;
 @Table(name = "customers")
 @NoArgsConstructor
 public class Customer {
+
     @Id
     @Column(name = "id")
     private int id;
@@ -29,6 +33,8 @@ public class Customer {
     private LocalDate dob;
     @Transient
     private Credentials credentials;
+
+
 
     public Customer(int id, String first_name, String last_name, String email, String phone, LocalDate dob) {
         this.id = id;
@@ -50,6 +56,10 @@ public class Customer {
 
     }
 
+    public CustomersEntity toCustomerEntity() {
+
+        return new CustomersEntity(id, first_name, last_name, email, phone, Date.valueOf(dob.toString()));
+    }
     public String toStringTextFile() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         return id + ";" + first_name + ";" + last_name + ";" + email + ";" + phone + ";" + dob.format(formatter);

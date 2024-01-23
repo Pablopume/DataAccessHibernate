@@ -2,32 +2,38 @@ package dao.imp;
 
 import common.Constants;
 import common.SqlQueries;
+import dao.JPAUtil;
 import dao.OrdersDAO;
-import dao.imp.maps.MapCustomer;
 import dao.imp.maps.MapOrder;
 import io.vavr.control.Either;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
-import model.Customer;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityTransaction;
+import jakarta.persistence.PersistenceException;
+import lombok.extern.log4j.Log4j2;
 import model.Order;
+import model.OrderItem;
 import model.errors.OrderError;
+import model.model2.CustomersEntity;
+import model.model2.OrdersEntity;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.datasource.DataSourceTransactionManager;
-import org.springframework.transaction.PlatformTransactionManager;
-import org.springframework.transaction.TransactionStatus;
-import org.springframework.transaction.support.DefaultTransactionDefinition;
 
 import java.sql.*;
-import java.util.ArrayList;
 import java.util.List;
 
+@Log4j2
 @Named("OrderDB")
 public class OrderDB implements OrdersDAO {
     private DBConnectionPool db;
+    private final JPAUtil jpautil;
+    private EntityManager em;
 
     @Inject
-    public OrderDB(DBConnectionPool db) {
+    public OrderDB(DBConnectionPool db, JPAUtil jpautil) {
         this.db = db;
+        this.jpautil = jpautil;
+
     }
 
     @Override
@@ -49,36 +55,28 @@ public class OrderDB implements OrdersDAO {
         return null;
     }
 
-    public Either<OrderError, Integer> delete(Order c) {
+    public Either<OrderError, Integer> delete(Order order) {
         Either<OrderError, Integer> result;
-        Connection myConnection = null;
+
         try {
-            myConnection = db.getConnection();
-            myConnection.setAutoCommit(false);
-
-            try (PreparedStatement preparedStatement = myConnection.prepareStatement(SqlQueries.DELETE_FROM_ORDERS_WHERE_ORDER_ID);
-                 PreparedStatement preparedStatementItems = myConnection.prepareStatement(SqlQueries.DELETE_FROM_ORDER_ITEMS_WHERE_ORDER_ID)) {
-                preparedStatement.setInt(1, c.getId());
-                preparedStatementItems.setInt(1, c.getId());
-                preparedStatementItems.executeUpdate();
-                preparedStatement.executeUpdate();
-                result = Either.right(1);
-            }
-
-            myConnection.commit();
-        } catch (SQLException ex) {
-
+            em = jpautil.getEntityManager();
+            EntityTransaction tx = em.getTransaction();
+            tx.begin();
             try {
-                myConnection.rollback();
-            } catch (SQLException e1) {
-                e1.printStackTrace();
-            }
+                OrdersEntity ordersEntity = em.find(OrdersEntity.class, order.getId());
+                em.remove(em.merge(ordersEntity));
+                tx.commit();
+                result = Either.right(1);
+            } catch (Exception e) {
+                if (tx.isActive()) tx.rollback();
 
-            result = Either.left(new OrderError(Constants.ERROR_CONNECTING_TO_DATABASE));
-        } finally {
-            if (myConnection != null) {
-                db.closeConnection(myConnection);
+                result = Either.left(new OrderError("Error deleting order"));
+            } finally {
+                em.close();
             }
+        } catch (Exception ex) {
+            log.error(ex.getMessage());
+            result = Either.left(new OrderError(Constants.ERROR_CONNECTING_TO_DATABASE));
         }
 
         return result;
@@ -108,24 +106,28 @@ public class OrderDB implements OrdersDAO {
 
 
     @Override
-    public Either<OrderError, Order> save(Order c) {
-        Either<OrderError, Order> result = null;
-        try (Connection con = db.getConnection();
-             PreparedStatement preparedStatement = con.prepareStatement(SqlQueries.INSERT_INTO_ORDERS_ORDER_DATE_CUSTOMER_ID_TABLE_ID_VALUES, Statement.RETURN_GENERATED_KEYS)) {
-            preparedStatement.setTimestamp(1, Timestamp.valueOf(c.getDate()));
-            preparedStatement.setInt(2, c.getCustomer_id());
-            preparedStatement.setInt(3, c.getTable_id());
+    public Either<OrderError, Order> save(Order order) {
+        Either<OrderError, Order> result;
+        EntityManager entityManager = jpautil.getEntityManager();
+        EntityTransaction tx = entityManager.getTransaction();
+        try {
+            tx.begin();
+            OrdersEntity order2 = order.toOrdersEntity();
+            order2.setOrderItemsByOrderId(order.getOrderItemList().stream().map(OrderItem::toOrderItemsEntity).toList());
+            order2.getOrderItemsByOrderId().forEach(orderItemsEntity -> orderItemsEntity.setOrdersByOrderId(order2));
+            entityManager.persist(order2);
 
-            int rs = preparedStatement.executeUpdate();
-            if (rs == 0) {
-                result = Either.left(new OrderError(Constants.ERROR_SAVING_ORDERS));
-            } else {
-                result = Either.right(new Order(c.getDate(), c.getCustomer_id(), c.getTable_id()));
-            }
-            db.closeConnection(con);
-        } catch (SQLException ex) {
-            result = Either.left(new OrderError(Constants.ERROR_CONNECTING_TO_DATABASE));
+            tx.commit();
+            result = Either.right(order);
+        } catch (PersistenceException e) {
+            log.error(e.getMessage());
+            entityManager.getTransaction().rollback();
+            result = Either.left(new OrderError(Constants.ERROR_SAVING_ORDERS));
+        } finally {
+            entityManager.close();
         }
+
         return result;
     }
+
 }

@@ -1,5 +1,7 @@
 
-r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(íçÄ£ýÿÿÿÿ8®ü¤óº1
-r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(íçÄ£ýÿÿÿÿ8®ü¤óº1
-j	java:S116"URename this field "first_name" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(è•Ûì
-i	java:S116"TRename this field "last_name" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(šø´¯
+r	java:S117'"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(íçÄ£ýÿÿÿÿ8ìäá”Ó1
+r	java:S117'"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(íçÄ£ýÿÿÿÿ8ìäá”Ó1
+q	java:S116"URename this field "first_name" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(è•Ûì8º­ß’Ó1
+p	java:S116"TRename this field "last_name" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(šø´¯8º­ß’Ó1
+M
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8®¹·˜Ó1

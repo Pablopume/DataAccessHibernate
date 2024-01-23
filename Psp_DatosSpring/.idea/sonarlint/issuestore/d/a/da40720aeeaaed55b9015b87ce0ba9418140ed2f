@@ -1,7 +1,17 @@
 
-r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­š¦šøÿÿÿÿ8„ÛÍ”½1
-r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­š¦šøÿÿÿÿ8„ÛÍ”½1
-r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’Èúùÿÿÿÿ8µ”Ğ”½1
-r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’Èúùÿÿÿÿ8µ”Ğ”½1
-w	java:S116"VRename this field "customer_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±®‹Ìÿÿÿÿÿ8ŠÛÍ”½1
-t	java:S116"SRename this field "table_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¸–é·şÿÿÿÿ8ŠÛÍ”½1
+m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Âºø8Å÷ïœÓ1
+m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Âºø8Æ÷ïœÓ1
+r	java:S117""QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­š¦šøÿÿÿÿ8Æ÷ïœÓ1
+r	java:S117""QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­š¦šøÿÿÿÿ8Æ÷ïœÓ1
+r	java:S117("QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’Èúùÿÿÿÿ8Æ÷ïœÓ1
+r	java:S117("QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’Èúùÿÿÿÿ8Æ÷ïœÓ1
+w	java:S116"VRename this field "customer_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±®‹Ìÿÿÿÿÿ8Í÷ïœÓ1
+t	java:S116"SRename this field "table_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¸–é·şÿÿÿÿ8Í÷ïœÓ1
+W
+java:S1128":Remove this unused import 'model.model2.OrderItemsEntity'.(§­»‰8ğ‰¬Ó1
+M
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8ğ‰¬Ó1
+S
+java:S1128"1Remove this unused import 'java.util.Collection'.(¹ÉĞšùÿÿÿÿ8ğ‰¬Ó1
+Z
+java:S1128"8Remove this unused import 'java.util.stream.Collectors'.(Óóº´úÿÿÿÿ8ğ‰¬Ó1

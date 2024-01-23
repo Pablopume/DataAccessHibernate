@@ -123,7 +123,7 @@ public class DeleteCustomersController extends BaseScreenController {
                                     alert2.setContentText("Do you want to delete this customer and its orders?");
                                     Optional<ButtonType> res2 = alert2.showAndWait();
                                     res2.ifPresent(buttonType2 -> {
-                                        if (buttonType2 == ButtonType.YES) {
+                                        if (buttonType2.equals(ButtonType.YES)) {
                                             deleteCustomerViewModel.getServicesOrder().getOrdersByCustomerId(selectedCustomer.getId()).forEach(order -> {
                                                 List<OrderItem> orderItems = deleteCustomerViewModel.getOrderItemService().getOrdersById(order.getId());
                                                 order.setOrderItemList(orderItems);

@@ -71,7 +71,7 @@ public class AddCustomersController extends BaseScreenController {
     }
 
 
-    public void addClient(ActionEvent actionEvent) {
+    public void addClient() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         if (nameField.getText().isEmpty() || surnameField.getText().isEmpty() || phoneField.getText().isEmpty() || mailField.getText().isEmpty() || dobField.getValue() == null) {
             getPrincipalController().sacarAlertError("Please fill all the fields");
